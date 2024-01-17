@@ -66,3 +66,5 @@
         org-roam-ui-follow t
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
+
+(setq! elfeeed-search-filter "@2-weeks-ago +news")
