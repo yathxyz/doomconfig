@@ -49,4 +49,5 @@
       org-journal-file-format "%Y%m%d.org"
       org-journal-date-prefix "#+TITLE: ")
 
+(setq deft-directory (concat (getenv "WORKDIR") "roam/"))
 (setq company-idle-delay 0)
