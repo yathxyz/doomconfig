@@ -42,6 +42,7 @@
 (map! :leader :desc "Refresh bib files" :n "y b r" #'refresh-citar-bibliography)
 (map! :leader :desc "Open URL in bibtex entry" :n "y l" #'citar-open-links)
 (map! :leader :desc "Toggle autocompletion" :n "y x" #'+company/toggle-auto-completion)
+(map! :leader :desc "Open elfeed" :n "y n" #'elfeed)
 ;;(map! :leader :desc "Quick ai prompt in the buffer" :n "y q" #'org-ai-prompt)
 
 (setq org-journal-time-prefix "* "
@@ -67,4 +68,11 @@
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
 
-(setq! elfeeed-search-filter "@2-weeks-ago +news")
+
+;; The silliest hack I could think of. Automatically filter only for news
+;; by adding it to the tail of the elfeed hook.
+(defun elfeed-set-default-filter ()
+  (setq elfeed-search-filter "@2-weeks-ago +news"))
+
+(add-hook 'elfeed-search-mode-hook #'elfeed-set-default-filter)
+(add-hook 'elfeed-search-mode-hook #'elfeed-update)
