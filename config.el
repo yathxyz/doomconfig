@@ -4,7 +4,7 @@
       user-mail-address "me@yath.xyz"
       epg-user-id user-mail-address)
 
-(setq doom-font (font-spec :family "Fira Code" :size 16))
+(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 16))
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 
 (setq doom-theme 'doom-oksolar-dark)
