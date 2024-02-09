@@ -45,7 +45,7 @@
 (map! :leader :desc "Open elfeed" :n "y n" #'elfeed)
 ;;(map! :leader :desc "Quick ai prompt in the buffer" :n "y q" #'org-ai-prompt)
 
-(setq org-journal-time-prefix "* "
+(setq org-journal-time-prefix "\n* "
       org-journal-date-format "%a, %Y-%m-%d"
       org-journal-file-format "%Y%m%d.org"
       org-journal-date-prefix "#+TITLE: ")
