@@ -1,10 +1,10 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (setq user-full-name "Ioannis Eleftheriou"
-      user-mail-address "me@yath.xyz"
-      epg-user-id user-mail-address)
+      user-mail-address "me@yath.xyz")
+;;      epg-user-id user-mail-address)
 
-(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 16))
+;;(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 16))
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 
 (setq doom-theme 'doom-oksolar-dark)
@@ -13,34 +13,33 @@
 
 (setq org-directory (getenv "WORKDIR"))
 
-
-(setq! citar-bibliography (list (concat (getenv "WORKDIR") "librarium/library.bib")))
+;;(setq! citar-bibliography (list (concat (getenv "WORKDIR") "librarium/library.bib")))
 
 (map! :leader :desc "Insert org mode timestamp at point with current date and time"
       :n "y d t" #'insert-now-timestamp-inactive)
 (setq! org-roam-directory (concat org-directory "roam/"))
 
-(defun refresh-citar-bibliography ()
-  (interactive)
-  (setq! citar-bibliography
-         (directory-files-recursively (concat (getenv "WORKDIR") "librarium/") "\\.bib$"))
-  (message "Refreshed list of bib files!"))
+;;(defun refresh-citar-bibliography ()
+;;  (interactive)
+;;  (setq! citar-bibliography
+;;         (directory-files-recursively (concat (getenv "WORKDIR") "librarium/") "\\.bib$"))
+;;  (message "Refreshed list of bib files!"))
 
-(setq! citar-citeproc-csl-styles-dir "~/Zotero/styles/")
+;;(setq! citar-citeproc-csl-styles-dir "~/Zotero/styles/")
 
-(setq! citar-library-paths
-       (list (concat (getenv "WORKDIR") "librarium/")))
+;;(setq! citar-library-paths
+;;       (list (concat (getenv "WORKDIR") "librarium/")))
 
-(setq! citar-notes-paths (list (concat org-roam-directory "references/")))
+;;(setq! citar-notes-paths (list (concat org-roam-directory "references/")))
 
 (map! :leader :desc "Toggle centered window mode" :n "y c" #'centered-window-mode)
 (map! :leader :desc "Toggle automatic fill mode" :n "y a" #'auto-fill-mode)
-(map! :leader :desc "Find bibliographic entry" :n "y b e" #'citar-open-entry)
-(map! :leader :desc "Open document from bib entry" :n "y o" #'citar-open)
+;;(map! :leader :desc "Find bibliographic entry" :n "y b e" #'citar-open-entry)
+;;(map! :leader :desc "Open document from bib entry" :n "y o" #'citar-open)
 (map! :leader :desc "Fill region" :n "y w" #'fill-region)
 ;;(map! :leader :desc "Toggle global flycheck mode" :n "y f f f" #'global-flycheck-mode)
-(map! :leader :desc "Refresh bib files" :n "y b r" #'refresh-citar-bibliography)
-(map! :leader :desc "Open URL in bibtex entry" :n "y l" #'citar-open-links)
+;;(map! :leader :desc "Refresh bib files" :n "y b r" #'refresh-citar-bibliography)
+;;(map! :leader :desc "Open URL in bibtex entry" :n "y l" #'citar-open-links)
 (map! :leader :desc "Toggle autocompletion" :n "y x" #'+company/toggle-auto-completion)
 (map! :leader :desc "Open elfeed" :n "y n" #'elfeed)
 ;;(map! :leader :desc "Quick ai prompt in the buffer" :n "y q" #'org-ai-prompt)
@@ -50,7 +49,7 @@
       org-journal-file-format "%Y%m%d.org"
       org-journal-date-prefix "#+TITLE: ")
 
-(setq deft-directory (concat (getenv "WORKDIR") "roam/"))
+;;(setq deft-directory (concat (getenv "WORKDIR") "roam/"))
 (setq company-idle-delay 0)
 
 (use-package! websocket
@@ -71,8 +70,8 @@
 
 ;; The silliest hack I could think of. Automatically filter only for news
 ;; by adding it to the tail of the elfeed hook.
-(defun elfeed-set-default-filter ()
-  (setq elfeed-search-filter "@2-weeks-ago +news"))
-
-(add-hook 'elfeed-search-mode-hook #'elfeed-set-default-filter)
-(add-hook 'elfeed-search-mode-hook #'elfeed-update)
+;;(defun elfeed-set-default-filter ()
+;;  (setq elfeed-search-filter "@2-weeks-ago +news"))
+;;
+;;(add-hook 'elfeed-search-mode-hook #'elfeed-set-default-filter)
+;;(add-hook 'elfeed-search-mode-hook #'elfeed-update)
