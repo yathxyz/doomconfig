@@ -41,7 +41,7 @@
 ;;(map! :leader :desc "Refresh bib files" :n "y b r" #'refresh-citar-bibliography)
 ;;(map! :leader :desc "Open URL in bibtex entry" :n "y l" #'citar-open-links)
 (map! :leader :desc "Toggle autocompletion" :n "y x" #'+company/toggle-auto-completion)
-(map! :leader :desc "Open elfeed" :n "y n" #'elfeed)
+;;(map! :leader :desc "Open elfeed" :n "y n" #'elfeed)
 ;;(map! :leader :desc "Quick ai prompt in the buffer" :n "y q" #'org-ai-prompt)
 
 (setq org-journal-time-prefix "\n* "
@@ -52,20 +52,20 @@
 ;;(setq deft-directory (concat (getenv "WORKDIR") "roam/"))
 (setq company-idle-delay 0)
 
-(use-package! websocket
-  :after org-roam)
-
-(use-package! org-roam-ui
-  :after org-roam ;; or :after org
-  ;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
-  ;;         a hookable mode anymore, you're advised to pick something yourself
-  ;;         if you don't care about startup time, use
-  ;;  :hook (after-init . org-roam-ui-mode)
-  :config
-  (setq org-roam-ui-sync-theme t
-        org-roam-ui-follow t
-        org-roam-ui-update-on-save t
-        org-roam-ui-open-on-start t))
+;;(use-package! websocket
+;;  :after org-roam)
+;;
+;;(use-package! org-roam-ui
+;;  :after org-roam ;; or :after org
+;;  ;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
+;;  ;;         a hookable mode anymore, you're advised to pick something yourself
+;;  ;;         if you don't care about startup time, use
+;;  ;;  :hook (after-init . org-roam-ui-mode)
+;;  :config
+;;  (setq org-roam-ui-sync-theme t
+;;        org-roam-ui-follow t
+;;        org-roam-ui-update-on-save t
+;;        org-roam-ui-open-on-start t))
 
 
 ;; The silliest hack I could think of. Automatically filter only for news
